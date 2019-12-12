@@ -1,0 +1,172 @@
+[v-cloak] {
+  display: none;
+}
+
+html, body {
+  overflow: hidden;
+  width : 100%;
+  height : 100%;
+  margin : 0;
+  padding : 0;
+}
+body {
+  background-color: lightgray;
+}
+
+#ui-main {
+  position: absolute;
+  width: 100%;
+}
+
+#renderCanvas {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* Top Bar Styling */
+#topBar {
+  width : 100%;
+  z-index:10;
+}
+#topHeader {
+  width: 1000px;
+  margin: auto;
+  background-color: rgba(245, 245, 245, 0.75);
+}
+@media only screen and (max-width: 1200px) {
+  #topHeader {
+    width: 100%;
+  }
+}
+
+#motile-data {
+  width : 400px;
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+/* FONT Classes */
+.font-lg {
+  font-size: large;
+}
+
+.font-sm {
+  font-size: small;
+}
+
+.font-blue {
+  color: blue;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Tooltip container */
+.tip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tip .tiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  padding: 5px 5px;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 5;
+}
+
+/* Tooltip text TOP */
+.tip .tiptext {
+  width: 300px;
+  bottom: 100%;
+  left: 50%;
+  /* margin-left: -100px; */
+  /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tip:hover .tiptext {
+  visibility: visible;
+}
+
+/*CSS styling for dots boxes */
+.box {
+  display: inline-block;
+}
+.box.box-sm {
+  height: 10px;
+  width: 10px;
+}
+.box.box-md {
+  height: 20px;
+  width: 20px;
+}
+.box.red {
+  background-color: red;
+}
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle.circle-sm {
+  height: 10px;
+  width: 10px;
+}
+
+.circle.circle-md {
+  height: 20px;
+  width: 20px;
+}
+
+.circle.circle-success {
+  background-color: #28a745;
+}
+
+.diamond {
+  color: aqua;
+}
+
+.red, .ruby {
+  color: red;
+}
+
+.citrine {
+  color: orange;
+}
+
+.topaz {
+  color: yellow;
+}
+
+.emerald {
+  color: green;
+}
+
+.sapphire {
+  color: blue;
+}
+
+.amethyst {
+  color: purple;
+}
