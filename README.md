@@ -1,4 +1,4 @@
-# ModuleTabletopJS
+# Module.TabletopJS
 A modular tabletop game framework for JS
 
 ![Screenshot](screenshot.png)
