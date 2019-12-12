@@ -96,7 +96,7 @@ A deck of cards that can be shuffled and drawn. Once drawn the card is placed on
 ### Features this Does Have
 * Create your own basic components
 * Slide components around the board
-* Easy mods and extensions through JS / HTML / images / mmodels
+* Easy mods and extensions through JS / HTML / images / models
 * FREE
 
 ### Features this Does Not Have
