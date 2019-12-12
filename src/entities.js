@@ -189,7 +189,7 @@ const Entities = (app) => {
       this.id = id || chance.hash()
       this._save = ["id","type","cid"]
     }
-    get component () { return this.cid != null ? app.UI.main.components[this.cid] : {}}
+    get component () { return this.cid != null ? app.components[this.cid] : {}}
     get title () { return this.component.title || ""}
     get color () { return this.component.color || "gray"}
     get UI () { return this.component.UI || null}
@@ -591,11 +591,13 @@ const Entities = (app) => {
         let mesh = container.meshes[0]
         var materials = container.materials
         mesh.material = material
-        //position
-        mesh.position.x = 0
-        mesh.position.y += this.baseHeight
-        //rotate 
-        mesh.rotation.y -= Math.PI/2
+        //scaling 
+        let bb = mesh.getBoundingInfo()
+        let delta = bb.maximum.y - bb.minimum.y
+        //determine scaling from desired height 
+        let scaleFactor = this.height/delta
+        mesh.scaling = new BABYLON.Vector3(scaleFactor, scaleFactor, scaleFactor)
+        mesh.bakeCurrentTransformIntoVertices()
         //see if data exists
         if(data.p){
           mesh.position = new BABYLON.Vector3(data.p.x,data.p.y,data.p.z)

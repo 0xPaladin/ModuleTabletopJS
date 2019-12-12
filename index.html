@@ -48,7 +48,7 @@
                 <span class="input-group-text">Components</span>
               </div>
               <select class="custom-select" v-model="cid">
-                <option v-for="(c,i) in cTitles" :value="i">{{c}}</option>
+                <option v-for="c in components" :value="c[0]">{{c[1].type}} - {{c[1].title}}</option>
               </select>
               <div class="input-group-append">
                 <button class="btn btn-outline-success" type="button" @click="addComponent()">Load</button>

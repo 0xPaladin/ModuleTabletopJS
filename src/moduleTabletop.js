@@ -17,6 +17,17 @@ const app = {
   DB,
   UI: {},
   gen : {},
+  _components: {},
+  get components () { return this._components },
+  set components (c) { 
+    this._components = c 
+    this.UI.main.components = Object.entries(this._components).slice()
+  },
+  addComponent (id,c) {
+    this._components[id] = c 
+    //add to UI
+    this.UI.main.components = Object.entries(this._components).slice()
+  },
   data : {},
   games: {},
   save() {

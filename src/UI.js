@@ -197,9 +197,6 @@ const UI = (app)=>{
       this.now = Date.now() / 1000
     },
     computed: {
-      cTitles () {
-        return this.components.map(c => c.type+" - "+c.title)
-      },
       canDiscard () {
         if(this.motile.type == "Card" && this.motile.deck) return true
         return false 
@@ -214,7 +211,8 @@ const UI = (app)=>{
     },
     methods: {
       addComponent () {
-        let C = this.components[this.cid]
+        let cid = this.cid
+        let C = Object.assign({cid},app.components[cid])
         //create & add 
         return new app.entities[C.type](C)
       },
