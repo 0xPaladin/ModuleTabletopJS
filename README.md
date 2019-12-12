@@ -11,12 +11,31 @@ Clone the Repo, download, and set up your own local server. Or Fork the repo and
 ## Components
 You can create / use the following components: Board, Cube, Token, Standee, Card, Deck, and Mesh. Each is described in greater detail below.
 
-Every components is an object with properties. 
+Every components is an object with properties. Declare all your components in one large object and update the app, or declare them indivdually and add them to the app as needed. 
 ```javascript
-{
-  propertyA : 0,
-  propertyB : "some value",
+const myGameComponents = {
+  pieceA : {
+    title : "Awesome Piece A",
+    type : "Cube",
+    color : "green"
+  },
+  pieceB : {
+    title : "Awesome Token",
+    type : "Token",
+    img : "reallyCoolImg.png"
+  }
 }
+//now add them to the app 
+app.components = myGameComponents
+
+//You can also declare another component later.
+let latecomer = {
+  title : "Late Mesh",
+  type : "Mesh",
+  file : "killerMesh.obj"
+  height: 35
+}
+app.addComponent("lateComer",latecomer)
 ```
 The following properties are generic and may be added to all components:
 * **type** (*required*, *string*) - must be one of: "Board", "Cube", "Token", "Standee", "Card", "Deck", or "Mesh"
@@ -28,6 +47,7 @@ app.gen["gen-id"] = (component) => {
   
 }
 ```
+
 ### Board
 A flat board that displays an image - the core board of a boardgame. 
 * **depth** (*number*, default: 800) - the width of the board
